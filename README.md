@@ -3,12 +3,12 @@
 ### Introduction:
 This is an implementation of the speech data augmentation method presented in "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition[1]".
 
-##### Base Mel Spectrogram
+##### Base Input
 <figure>
   <img src="demo/base.png"/>
 </figure>
 
-##### SpecAugmented Mel Spectrogram
+##### SpecAugment Applied (Time Warp + Frequency Masking + Time Masking)
 <figure>
   <img src="demo/time_mask.png"/>
 </figure>
