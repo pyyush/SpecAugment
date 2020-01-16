@@ -5,12 +5,12 @@ This is an implementation of the speech data augmentation method presented in "S
 
 ### Base Mel Spectrogram
 <figure>
-  <img src="demo/base.PNG"/>
+  <img src="demo/base.png"/>
 </figure>
 
 ### SpecAugmented Mel Spectrogram
 <figure>
-  <img src="demo/time_masked.PNG"/>
+  <img src="demo/time_masked.png"/>
 </figure>
 
 ### Requirements:
