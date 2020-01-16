@@ -24,7 +24,9 @@ This is an implementation of the speech data augmentation method presented in "S
 7. tensorflow_addons
 
 ### Usage:
+```
 main.py [--dir][--policy]
+```
 
 --dir     path/to/dataset\
 --policy  augmentation policy to use
