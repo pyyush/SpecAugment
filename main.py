@@ -40,4 +40,4 @@ if __name__ == '__main__':
         librosa.display.specshow(freq_masked[0, :, :, 0], x_axis='time', y_axis='mel', fmax=8000) # Freq Masked
         
         time_masked = apply.time_mask()
-        librosa.display.specshow(time_masked[0, :, :, 0], x_axis='time', y_axis='mel', fmax=8000)
+        librosa.display.specshow(time_masked[0, :, :, 0], x_axis='time', y_axis='mel', fmax=8000) # Time Masked
