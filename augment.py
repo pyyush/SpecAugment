@@ -71,7 +71,6 @@ class SpecAugment():
         # Destination Points
         dest_points = [[[v//2, random_pt[0] + w]]]
         
-        
         self.mel_spectrogram, _ = sparse_image_warp(self.mel_spectrogram, src_points, dest_points, num_boundary_points=2)
     
         return self.mel_spectrogram
@@ -106,5 +105,3 @@ class SpecAugment():
             self.mel_spectrogram[:, :, t0:t0 + t, :] = mean
             
         return self.mel_spectrogram
-        
-        
