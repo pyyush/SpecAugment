@@ -8,7 +8,7 @@ This is an implementation of the speech data augmentation method presented in "S
   <img src="demo/base.png"/>
 </figure>
 
-##### SpecAugment Applied (Time Warp + Frequency Masking + Time Masking)
+##### SpecAugmented Output (Policy = 'LB')
 <figure>
   <img src="demo/time_mask.png"/>
 </figure>
