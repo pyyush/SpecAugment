@@ -3,6 +3,16 @@
 ### Introduction:
 This is an implementation of the speech data augmentation method presented in "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition[1]".
 
+### Base Mel Spectrogram
+<figure>
+  <img src="demo/base.PNG"/>
+</figure>
+
+### SpecAugmented Mel Spectrogram
+<figure>
+  <img src="demo/time_masked.PNG"/>
+</figure>
+
 ### Requirements:
 1. python3
 2. librosa
@@ -18,6 +28,7 @@ main.py [--dir][--policy]
 
 --dir     path/to/dataset\
 --policy  augmentation policy to use
+
 
 ### References:
 1. @article{Park_2019,
