@@ -28,8 +28,8 @@ This is an implementation of the speech data augmentation method presented in "S
 main.py [--dir][--policy]
 ```
 
---dir     path/to/dataset\
---policy  augmentation policy to use
+--dir     path/to/dataset default='./LibriSpeech/'\
+--policy  augmentation policy to use from {'LB','LD', 'SS', 'SM'} deafault='LD'
 
 OR
 
