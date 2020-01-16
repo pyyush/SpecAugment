@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument('--dir', default='./LibriSpeech/', help='path to dataset/dir to look for files')
-parser.add_argument('--policy', help='augmentation policies - LB, LD, SM, SS')
+parser.add_argument('--policy', default='LD', help='augmentation policies - LB, LD, SM, SS')
 
 args = parser.parse_args()
 
