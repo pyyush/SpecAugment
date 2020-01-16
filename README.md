@@ -31,6 +31,12 @@ main.py [--dir][--policy]
 --dir     path/to/dataset\
 --policy  augmentation policy to use
 
+OR
+
+```
+refer to demo/demo.ipynb
+```
+
 
 ### References:
 1. @article{Park_2019,
