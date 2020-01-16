@@ -34,7 +34,7 @@ main.py [--dir][--policy]
 OR
 
 ```
-refer to demo/demo.ipynb
+refer to demo/demo.ipynb for jupyter notebook demo
 ```
 
 
