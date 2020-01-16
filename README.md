@@ -10,7 +10,7 @@ This is an implementation of the speech data augmentation method presented in "S
 
 ### SpecAugmented Mel Spectrogram
 <figure>
-  <img src="demo/time_masked.png"/>
+  <img src="demo/time_mask.png"/>
 </figure>
 
 ### Requirements:
