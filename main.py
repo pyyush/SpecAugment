@@ -26,18 +26,24 @@ if __name__ == '__main__':
         
         # Load the audio file
         audio, sr = librosa.load(file)
+        
         # Extract Mel Spectrogram Features from the audio file
         mel_spectrogram = librosa.feature.melspectrogram(y=audio, sr=sr, n_mels=256, hop_length=128, fmax=8000)
-        librosa.display.specshow(mel_spectrogram, x_axis='time', y_axis='mel', fmax=8000) # Base
+        plt.figure(figsize=(14, 6))
+        librosa.display.specshow(librosa.power_to_db(mel_spectrogram, ref=np.max), x_axis='time', y_axis='mel', fmax=8000) # Base
         
         # Apply SpecAugment
         apply = SpecAugment(mel_spectrogram, args.policy)
         
-        time_warped = apply.time_warp()
-        librosa.display.specshow(time_warped[0, :, :, 0].numpy(), x_axis='time', y_axis='mel', fmax=8000) # Time Warped
+        time_warped = apply.time_warp() # Applies Time Warping to the mel spectrogram
+        #plt.figure(figsize=(14, 6))
+        #librosa.display.specshow(librosa.power_to_db(time_warped[0, :, :, 0].numpy(), ref=np.max), x_axis='time', y_axis='mel', fmax=8000) # Time Warped
         
-        freq_masked = apply.freq_mask()
-        librosa.display.specshow(freq_masked[0, :, :, 0], x_axis='time', y_axis='mel', fmax=8000) # Freq Masked
+        freq_masked = apply.freq_mask() # Applies Frequency Masking to the mel spectrogram
         
-        time_masked = apply.time_mask()
-        librosa.display.specshow(time_masked[0, :, :, 0], x_axis='time', y_axis='mel', fmax=8000) # Time Masked
+        time_masked = apply.time_mask() # Applies Time Masking to the mel spectrogram
+        plt.figure(figsize=(14, 6))
+        librosa.display.specshow(librosa.power_to_db(time_masked[0, :, :, 0], ref=np.max), x_axis='time', y_axis='mel', fmax=8000) # Time Masked
+        
+        # Break after one spectrogram is augmented ## Can also append/add spectrogram to training/dev set
+        break
