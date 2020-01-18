@@ -1,7 +1,7 @@
 ## SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition
 
 ### Introduction:
-This is an implementation of the speech data augmentation method presented in "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition[1]".
+This repository contains the implementation of the speech data augmentation method presented in "SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition[1]".
 
 ##### Base Input
 <figure>
