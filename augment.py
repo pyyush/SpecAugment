@@ -37,7 +37,6 @@ class SpecAugment():
     '''
     
     def __init__(self, mel_spectrogram, policy, zero_mean_normalized=False):
-        super(SpecAugment, self).__init__()
         self.mel_spectrogram = mel_spectrogram
         self.policy = policy
         self.zero_mean_normalized = zero_mean_normalized
