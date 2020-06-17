@@ -1,7 +1,8 @@
 > SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition
 > Park, Daniel S. and Chan, William and Zhang, Yu and Chiu, Chung-Cheng and Zoph, Barret and Cubuk, Ekin D. and Le, Quoc V.
 > Interspeech 2019
-> [[Paper]](http://dx.doi.org/10.21437/Interspeech.2019-2680)
+> [[Paper]](http://dx.doi.org/10.21437/Interspeech.2019-2680)\
+# About
 This repository contains a implementation of the augmentation methodology proposed in the above paper.
 
 
