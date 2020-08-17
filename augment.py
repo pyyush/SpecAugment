@@ -77,15 +77,17 @@ class SpecAugment():
     
     def freq_mask(self):
         
-        v = self.mel_spectrogram.shape[1] # no. of mel freq channels
+        v = self.mel_spectrogram.shape[1] # no. of mel bins
         
         # apply m_F frequency masks to the mel spectrogram
         for i in range(self.m_F):
             f = int(np.random.uniform(0, self.F)) # [0, F)
             f0 = random.randint(0, v - f) # [0, v - f)
             
-            mean = tf.reduce_mean(self.mel_spectrogram).numpy()
-            self.mel_spectrogram = np.array(self.mel_spectrogram)
+            if self.zero_mean_normalized:
+                mean = 0
+            else:
+                mean = tf.reduce_mean(self.mel_spectrogram, axis=2).numpy()
             self.mel_spectrogram[:, f0:f0 + f, :, :] = mean
             
         return self.mel_spectrogram
@@ -93,14 +95,17 @@ class SpecAugment():
     
     def time_mask(self):
     
-        tau = self.mel_spectrogram.shape[2] # time steps
+        tau = self.mel_spectrogram.shape[2] # time frames
         
         # apply m_T time masks to the mel spectrogram
         for i in range(self.m_T):
             t = int(np.random.uniform(0, self.T)) # [0, T)
             t0 = random.randint(0, tau - t) # [0, tau - t)
             
-            mean = tf.reduce_mean(self.mel_spectrogram).numpy()
+            if self.zero_mean_normalized:
+                mean = 0
+            else:
+                mean = tf.reduce_mean(self.mel_spectrogram, axis=2).numpy()
             self.mel_spectrogram[:, :, t0:t0 + t, :] = mean
             
         return self.mel_spectrogram
