@@ -36,7 +36,7 @@ class SpecAugment():
     m_T : Number of time masks
     '''
     
-    def __init__(self, mel_spectrogram, policy, zero_mean_normalized=False):
+    def __init__(self, mel_spectrogram, policy, zero_mean_normalized=True):
         self.mel_spectrogram = mel_spectrogram
         self.policy = policy
         self.zero_mean_normalized = zero_mean_normalized
@@ -83,12 +83,7 @@ class SpecAugment():
         for i in range(self.m_F):
             f = int(np.random.uniform(0, self.F)) # [0, F)
             f0 = random.randint(0, v - f) # [0, v - f)
-            
-            if self.zero_mean_normalized:
-                mean = 0
-            else:
-                mean = tf.reduce_mean(self.mel_spectrogram, axis=2).numpy()
-            self.mel_spectrogram[:, f0:f0 + f, :, :] = mean
+            self.mel_spectrogram[:, f0:f0 + f, :, :] = 0
             
         return self.mel_spectrogram
     
@@ -101,11 +96,6 @@ class SpecAugment():
         for i in range(self.m_T):
             t = int(np.random.uniform(0, self.T)) # [0, T)
             t0 = random.randint(0, tau - t) # [0, tau - t)
-            
-            if self.zero_mean_normalized:
-                mean = 0
-            else:
-                mean = tf.reduce_mean(self.mel_spectrogram, axis=2).numpy()
-            self.mel_spectrogram[:, :, t0:t0 + t, :] = mean
+            self.mel_spectrogram[:, :, t0:t0 + t, :] = 0
             
         return self.mel_spectrogram
